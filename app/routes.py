@@ -78,7 +78,7 @@ def use_schedule():
     requestArgs = request.get_json()
 
     areaAddress = requestArgs["areaAddress"]
-    workerAmount = requestArgs["workerAmount"]
+    workersAmount = requestArgs["workersAmount"]
     request_date = requestArgs["date"]
     startingHour = requestArgs["startingHour"]
     endingHour = requestArgs["endingHour"]
@@ -86,7 +86,7 @@ def use_schedule():
     schedules_collection = mongo1.db.schedules
 
     chosen_schedule = schedules_collection.find_one({"date":request_date})
-    for _ in range(workerAmount):
+    for _ in range(workersAmount):
         for i in range(int(startingHour-9), int(endingHour-9)+1):
 
             popped_id = chosen_schedule["availableWorkers"][areaAddress][i].pop()
@@ -189,16 +189,16 @@ def add_order():
         rq = request.get_json()
 
         customer_id = rq["customerId"]
-        customer_name = rq["customer_name"]
-        workers_amount = rq["workers_amount"]
+        customer_name = rq["customerName"]
+        workers_amount = rq["workersAmount"]
         price = rq["price"]
         date = rq["date"]
         shift = rq["shift"]
-        customer_phone = rq["customer_phone"]
-        customer_email = rq["customer_email"]
+        customer_phone = rq["customerPhone"]
+        customer_email = rq["customerEmail"]
         address = rq["address"]
         area = rq["area"]
-        payment_method = rq["payment_method"]
+        payment_method = rq["paymentMethod"]
         manhour = rq["manhour"]
         workerIds = rq["workerIds"]
         order_status = "unfinished"
