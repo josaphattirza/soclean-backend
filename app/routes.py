@@ -73,7 +73,7 @@ def get_schedule():
 def use_schedule():
     # Initialize response data structure
     response = dict()
-    response["worker_ids"] = []
+    response["workerIds"] = []
 
     requestArgs = request.get_json()
 
@@ -102,7 +102,7 @@ def use_schedule():
             )
 
         print(popped_id)
-        response["worker_ids"].append(parse_json(popped_id))
+        response["workerIds"].append(parse_json(popped_id))
 
     return response
 
@@ -203,7 +203,7 @@ def add_order():
         workerIds = rq["workerIds"]
         order_status = "unfinished"
 
-        o = Order(customer_id=customer_id, customer_name=customer_name,
+        o = Order(customerId=customer_id, customer_name=customer_name,
                   address=address, area=area, workers_amount=workers_amount, price=price,
                   payment_method=payment_method, date=date, shift=shift,
                   customer_phone=customer_phone, customer_email=customer_email,
@@ -235,7 +235,7 @@ def get_order():
     # data = name of collection
     order_id = request.get_json()
 
-    id = order_id["order_id"]
+    id = order_id["orderId"]
 
     order_id = ObjectId(id)
 

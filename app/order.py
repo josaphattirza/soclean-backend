@@ -1,7 +1,7 @@
 class Order:
     # Doesn't include order_id because it is self assigned
-    def __init__(self, customer_id, customer_name, address, area, workers_amount, price, payment_method, date, shift, customer_phone, customer_email,manhour, workerIds, order_status):
-        self.customer_id = customer_id
+    def __init__(self, customerId, customer_name, address, area, workers_amount, price, payment_method, date, shift, customer_phone, customer_email,manhour, workerIds, order_status):
+        self.customerId = customerId
         self.customerName = customer_name
         self.workersAmount = workers_amount
         self.price = price
@@ -18,10 +18,10 @@ class Order:
         self.workerIds = workerIds
 
     def myfunc(self):
-        print("Hello my name is " + self.customer_id)
+        print("Hello my name is " + self.customerId)
 
     def __str__(self):
-        cid = str(self.customer_id)
+        cid = str(self.customerId)
         cn = str(self.customerName)
         wa = str(self.workersAmount)
         p = str(self.price)
