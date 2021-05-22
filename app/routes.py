@@ -15,6 +15,8 @@ from .order import Order
 
 from bson.objectid import ObjectId
 
+from flask_cors import CORS, cross_origin
+
 
 # ERROR = TypeError: Object of type ObjectId is not JSON serializable
 # parse_json is used to convert ObjectId into JSON serializable
@@ -24,11 +26,13 @@ def parse_json(data):
 
 @app.route('/')
 @app.route('/index')
+@cross_origin()
 def index():
     return render_template('base.html')
 
 
 @app.route("/api/get_schedule", methods=['GET', 'POST'])
+@cross_origin()
 # Maybe add cross_origin here?
 def get_schedule():
     # Initialize response data structure
@@ -64,6 +68,7 @@ def get_schedule():
 
 
 @app.route("/api/use_schedule", methods=['GET', 'POST'])
+@cross_origin()
 # Maybe add cross_origin here?
 def use_schedule():
     # Initialize response data structure
@@ -103,6 +108,7 @@ def use_schedule():
 
 
 @app.route("/api/update_schedule", methods=['GET', 'POST'])
+@cross_origin()
 # Maybe add cross_origin here?
 def update_schedule():
     schedules_collection = mongo1.db.schedules
@@ -165,6 +171,7 @@ def update_schedule():
 
 
 @app.route("/api/delete_all_schedules", methods=['GET', 'POST'])
+@cross_origin()
 # maybe add cross_origin here?
 def delete_all_schedules():
     schedules_collection = mongo1.db.schedules
@@ -175,6 +182,7 @@ def delete_all_schedules():
 
 
 @app.route("/api/add_order", methods=['GET', 'POST'])
+@cross_origin()
 # maybe add cross_origin here?
 def add_order():
     with app.app_context():
@@ -221,6 +229,7 @@ def add_order():
 
 # Query an order using its _id
 @app.route("/api/get_order", methods=['GET', 'POST'])
+@cross_origin()
 # maybe add cross_origin here?
 def get_order():
     # data = name of collection
@@ -241,6 +250,7 @@ def get_order():
 
 # Return all attributes related to ordered workers, except their password and availableHours
 @app.route("/api/get_worker", methods=['GET', 'POST'])
+@cross_origin()
 # Maybe add cross_origin here?
 def get_worker():
     # # Sample of request array
@@ -288,9 +298,9 @@ def get_worker():
     return response
 
 
-
 # Query all unfinished orders related to a workerId
 @app.route("/api/worker/get_unfinished_order", methods=['GET', 'POST'])
+@cross_origin()
 # maybe add cross_origin here?
 def worker_get_unfinished_order():
     # # Sample of request array
@@ -339,6 +349,7 @@ def worker_get_unfinished_order():
 
 # Query all finished orders related to a workerId
 @app.route("/api/worker/get_finished_order", methods=['GET', 'POST'])
+@cross_origin()
 # maybe add cross_origin here?
 def worker_get_finished_order():
     # # Sample of request array
