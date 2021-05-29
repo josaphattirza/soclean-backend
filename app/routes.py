@@ -221,7 +221,7 @@ def add_order():
 
         o.__dict__["_id"] = parse_json(o.__dict__["_id"])
 
-        # json to basically respond with __str__ of the class
+        # json to basically respond with __dict__ of the class
         response = jsonify(o.__dict__)
 
     return response
@@ -319,7 +319,7 @@ def worker_get_unfinished_order():
         worker_id = request_params["workerId"]
 
         # Name of collection -> workers
-        datas = mongo1.db.orders.find({"workerIds": worker_id, "order_status": "unfinished"})
+        datas = mongo1.db.orders.find({"workerIds": worker_id, "orderStatus": "unfinished"})
 
         for data in datas:
 
@@ -336,7 +336,7 @@ def worker_get_unfinished_order():
                  "payment_method": data["address"],
                  "shift": data["payment_method"],
                  "date": data["date"],
-                 "order_status": data["order_status"]
+                 "orderStatus": data["orderStatus"]
                  }
             )
 
@@ -368,7 +368,7 @@ def worker_get_finished_order():
         worker_id = request_params["workerId"]
 
         # Name of collection -> workers
-        datas = mongo1.db.orders.find({"workerIds": worker_id, "order_status": "finished"})
+        datas = mongo1.db.orders.find({"workerIds": worker_id, "orderStatus": "finished"})
 
         for data in datas:
 
@@ -385,7 +385,7 @@ def worker_get_finished_order():
                  "payment_method": data["address"],
                  "shift": data["payment_method"],
                  "date": data["date"],
-                 "order_status": data["order_status"]
+                 "orderStatus": data["orderStatus"]
                  }
             )
 
