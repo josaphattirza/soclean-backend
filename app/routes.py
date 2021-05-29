@@ -336,7 +336,8 @@ def worker_get_unfinished_order():
                  "paymentMethod": data["paymentMethod"],
                  "shift": data["shift"],
                  "date": data["date"],
-                 "orderStatus": data["orderStatus"]
+                 "orderStatus": data["orderStatus"],
+                 "price" : data["price"]
                  }
             )
 
@@ -385,7 +386,8 @@ def worker_get_finished_order():
                  "paymentMethod": data["paymentMethod"],
                  "shift": data["shift"],
                  "date": data["date"],
-                 "orderStatus": data["orderStatus"]
+                 "orderStatus": data["orderStatus"],
+                 "price" : data["price"]
                  }
             )
 
