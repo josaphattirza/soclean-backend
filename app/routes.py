@@ -396,3 +396,31 @@ def worker_get_finished_order():
         response = jsonify(response)
 
     return response
+
+
+# Complete / Finish an order
+@app.route("/api/complete_order", methods=['GET', 'POST'])
+@cross_origin()
+# maybe add cross_origin here?
+def complete_order():
+    # Get orderId from request parameters
+    order_id = request.get_json()
+    id = order_id["orderId"]
+    order_id = ObjectId(id)
+
+    # Update orderStatus as finished
+    order_collection = mongo1.db.orders
+    order_collection.update_one({"_id": order_id},
+        {
+            "$set":{
+                "orderStatus" : "finished"
+            }
+        }
+    )
+
+    # return updated order as a response
+    finished_order = order_collection.find_one({"_id": order_id})
+    finished_order["_id"] = parse_json(finished_order["_id"])
+    response = finished_order
+
+    return response
