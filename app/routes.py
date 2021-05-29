@@ -328,13 +328,13 @@ def worker_get_unfinished_order():
                 # Pymongo provides json_util - you can use that one instead to handle BSON types
                 # because _id is an ObjectId
                 {"_id": parse_json(data["_id"]),
-                 "customer_name": data["customer_name"],
-                 "customer_phone": data["customer_phone"],
-                 "customer_email": data["customer_email"],
+                 "customerName": data["customerName"],
+                 "customerPhone": data["customerPhone"],
+                 "customerEmail": data["customerEmail"],
                  "address": data["address"],
                  "area": data["area"],
-                 "payment_method": data["address"],
-                 "shift": data["payment_method"],
+                 "paymentMethod": data["paymentMethod"],
+                 "shift": data["shift"],
                  "date": data["date"],
                  "orderStatus": data["orderStatus"]
                  }
@@ -377,13 +377,13 @@ def worker_get_finished_order():
                 # Pymongo provides json_util - you can use that one instead to handle BSON types
                 # because _id is an ObjectId
                 {"_id": parse_json(data["_id"]),
-                 "customer_name": data["customer_name"],
-                 "customer_phone": data["customer_phone"],
-                 "customer_email": data["customer_email"],
+                 "customerName": data["customerName"],
+                 "customerPhone": data["customerPhone"],
+                 "customerEmail": data["customerEmail"],
                  "address": data["address"],
                  "area": data["area"],
-                 "payment_method": data["address"],
-                 "shift": data["payment_method"],
+                 "paymentMethod": data["paymentMethod"],
+                 "shift": data["shift"],
                  "date": data["date"],
                  "orderStatus": data["orderStatus"]
                  }
