@@ -128,18 +128,18 @@ def update_schedule():
         document = dict()
 
         today_available_workers = dict()
-        today_available_workers["Beitou"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Daan"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Datong"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Nangang"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Neihu"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Shilin"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Songshan"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Wanhua"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Wenshan"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Xinyi"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Zhongshan"] = [[], [], [], [], [], [], [], [], [], [], [], []]
-        today_available_workers["Zhongzheng"] = [[], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Beitou"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Daan"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Datong"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Nangang"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Neihu"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Shilin"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Songshan"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Wanhua"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Wenshan"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Xinyi"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Zhongshan"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
+        today_available_workers["Zhongzheng"] = [[], [], [], [], [], [], [], [], [], [], [], [], []]
 
         # Name of collection -> workers
         data = mongo1.db.workers.find()
