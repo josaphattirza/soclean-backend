@@ -429,7 +429,7 @@ def complete_order():
 @app.route("/api/complete_order2", methods=['GET', 'POST'])
 @cross_origin()
 # maybe add cross_origin here?
-def complete_order():
+def complete_order2():
     # Get orderId from request parameters
     order_id = request.get_json()
     id = order_id["orderId"]
