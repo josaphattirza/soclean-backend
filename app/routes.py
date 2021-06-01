@@ -180,6 +180,16 @@ def delete_all_schedules():
 
     return "all schedules deleted"
 
+@app.route("/api/delete_all_orders", methods=['GET', 'POST'])
+@cross_origin()
+# maybe add cross_origin here?
+def delete_all_orders():
+    orders_collection = mongo1.db.orders
+
+    x = orders_collection.delete_many({})
+
+    return "all orders deleted"
+
 
 @app.route("/api/add_order", methods=['GET', 'POST'])
 @cross_origin()
